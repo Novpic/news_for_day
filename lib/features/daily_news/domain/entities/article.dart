@@ -1,13 +1,14 @@
-class ArticleEntity {
+import 'package:equatable/equatable.dart';
 
+class ArticleEntity extends Equatable {
   final int? id;
-  final String ? author;
+  final String? author;
   final String? title;
-  final String ?description;
+  final String? description;
   final String? url;
   final String? urlToImage;
   final String? publishedAt;
-  final String ?content;
+  final String? content;
 
   ArticleEntity({
     this.id,
@@ -19,7 +20,18 @@ class ArticleEntity {
     this.publishedAt,
     this.content,
   });
-  
+
+  @override
+  List<Object?> get props => [
+        id,
+        author,
+        title,
+        description,
+        url,
+        urlToImage,
+        publishedAt,
+        content,
+      ];
 
   factory ArticleEntity.fromJson(Map<String, dynamic> json) {
     return ArticleEntity(
