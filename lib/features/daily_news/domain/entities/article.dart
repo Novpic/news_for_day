@@ -10,7 +10,7 @@ class ArticleEntity extends Equatable {
   final String? publishedAt;
   final String? content;
 
-  ArticleEntity({
+  const ArticleEntity({
     this.id,
     this.author,
     this.title,
@@ -33,23 +33,23 @@ class ArticleEntity extends Equatable {
         content,
       ];
 
-  factory ArticleEntity.fromJson(Map<String, dynamic> json) {
-    return ArticleEntity(
-      title: json['title'],
-      description: json['description'],
-      url: json['url'],
-      urlToImage: json['urlToImage'],
-      publishedAt: json['publishedAt'],
-    );
-  }
+  // factory ArticleEntity.fromJson(Map<String, dynamic> json) {
+  //   return ArticleEntity(
+  //     title: json['title'],
+  //     description: json['description'],
+  //     url: json['url'],
+  //     urlToImage: json['urlToImage'],
+  //     publishedAt: json['publishedAt'],
+  //   );
+  // }
 
-  Map<String, dynamic> toJson() {
-    return {
-      'title': title,
-      'description': description,
-      'url': url,
-      'urlToImage': urlToImage,
-      'publishedAt': publishedAt,
-    };
-  }
+  // Map<String, dynamic> toJson() {
+  //   return {
+  //     'title': title,
+  //     'description': description,
+  //     'url': url,
+  //     'urlToImage': urlToImage,
+  //     'publishedAt': publishedAt,
+  //   };
+  // }
 }
