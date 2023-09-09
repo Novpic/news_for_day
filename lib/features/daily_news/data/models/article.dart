@@ -1,7 +1,7 @@
 import 'package:news_for_day/features/daily_news/domain/entities/article.dart';
 
 class ArticleModel extends ArticleEntity {
-  ArticleModel({
+  const ArticleModel({
     int? id,
     String? author,
     String? title,
