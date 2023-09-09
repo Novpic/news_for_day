@@ -7,7 +7,7 @@ import '../../domain/repository/article_repository.dart';
 
 class ArticleRepositoryImpl implements ArticleRepository {
   @override
-  Future<DataState<List<ArticleEntity>>> getNewsArticles() {
+  Future<DataState<List<ArticleModel>>> getNewsArticles() {
     // TODO: implement getNewsArticles
     throw UnimplementedError();
   }
