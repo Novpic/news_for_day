@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:news_for_day/features/daily_news/presentation/pages/home/widgets/articles_tile.dart';
 
 import '../../bloc/article/remote/remote_article_bloc.dart';
 import '../../bloc/article/remote/remote_article_state.dart';
@@ -33,7 +34,19 @@ class _Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<RemoteArticleBloc, RemoteArticleState>(
       builder: (context, state) {
-        return Container();
+        if (state is RemoteArticleLoading) {
+          return const Center(child: CircularProgressIndicator());
+        } else if (state is RemoteArticleError) {
+          return Center(
+              child: Text(state.error?.message ?? 'Something went wrong'));
+        } else {
+          return ListView.builder(
+            itemCount: state.articles?.length,
+            itemBuilder: (context, index) {
+              return ArticleTile(article: state.articles![index]);
+            },
+          );
+        }
       },
     );
   }

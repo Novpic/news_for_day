@@ -2,7 +2,7 @@ import 'package:news_for_day/features/daily_news/domain/entities/article.dart';
 
 class ArticleModel extends ArticleEntity {
   const ArticleModel({
-    int? id,
+    String? id,
     String? author,
     String? title,
     String? description,
@@ -13,15 +13,17 @@ class ArticleModel extends ArticleEntity {
   });
 
   factory ArticleModel.fromJson(Map<String, dynamic> map) {
-    return ArticleModel(
-      id: map['id'] ?? '',
-      author: map['author'] ?? '',
-      content: map['content'] ?? '',
-      title: map['title'] ?? '',
-      description: map['description'] ?? '',
-      url: map['url'] ?? '',
-      urlToImage: map['urlToImage'] ?? '',
-      publishedAt: map['publishedAt'] ?? '',
+    final a = ArticleModel(
+      id: map['id'],
+      author: map['author'],
+      content: map['content'],
+      title: map['title'],
+      description: map['description'],
+      url: map['url'],
+      urlToImage: map['urlToImage'],
+      publishedAt: map['publishedAt'],
     );
+    print(a);
+    return a;
   }
 }

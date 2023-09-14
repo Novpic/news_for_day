@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_for_day/features/daily_news/presentation/bloc/article/remote/remote_article_bloc.dart';
+import 'package:news_for_day/features/daily_news/presentation/bloc/article/remote/remote_article_event.dart';
 import 'package:news_for_day/features/daily_news/presentation/pages/home/daily_news_view.dart';
 
 import '../../../../../injection_container.dart';
@@ -11,7 +12,7 @@ class DailyNewsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<RemoteArticleBloc>(
-        create: (BuildContext context) => sl<RemoteArticleBloc>(),
+        create: (BuildContext context) => sl()..add(const GetRemoteArticles()),
         child: const DailyNewsView());
   }
 }
