@@ -1,5 +1,7 @@
+import 'package:floor/floor.dart';
 import 'package:news_for_day/features/daily_news/domain/entities/article.dart';
 
+@Entity(tableName: 'article', primaryKeys: ['id'])
 class ArticleModel extends ArticleEntity {
   const ArticleModel({
     required int? id,
@@ -31,5 +33,17 @@ class ArticleModel extends ArticleEntity {
       urlToImage: map['urlToImage'],
       publishedAt: map['publishedAt'],
     );
+  }
+
+  factory ArticleModel.fromEntity(ArticleEntity article) {
+    return ArticleModel(
+        id: article.id,
+        author: article.author,
+        title: article.title,
+        description: article.description,
+        url: article.url,
+        urlToImage: article.urlToImage,
+        publishedAt: article.publishedAt,
+        content: article.content);
   }
 }

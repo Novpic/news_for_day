@@ -5,6 +5,7 @@ import 'config/theme/app_theme.dart';
 import 'injection_container.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await initalDependencies();
   runApp(const MyApp());
 }
