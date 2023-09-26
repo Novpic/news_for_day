@@ -4,8 +4,8 @@ import 'package:news_for_day/features/daily_news/presentation/pages/detail_news/
 
 import '../../../../domain/entities/article.dart';
 
-class ArticleTile extends StatelessWidget {
-  const ArticleTile({super.key, required this.article});
+class SavedArticleTile extends StatelessWidget {
+  const SavedArticleTile({super.key, required this.article});
 
   final ArticleEntity article;
 
@@ -89,6 +89,13 @@ class ArticleTile extends StatelessWidget {
                     )
                   ],
                 ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8),
+              child: IconButton(
+                icon: const Icon(Icons.delete),
+                onPressed: () {},
               ),
             ),
             const SizedBox(width: 10),
